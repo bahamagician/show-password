@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Show Password Button</title>
+
+  <!-- Bootstrap Styles -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Font awesome styles -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" media="screen">
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".show-password-btn").click(function() {
+        var passwordField = $(this).attr("data-field");
+        var passwordToggleValue = ($(passwordField).attr("type") == "password") ? 'text' : 'password';
+        $('.fa-check, .fa-square-o', this).toggle();
+        $(passwordField).attr("type", passwordToggleValue);
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <form>
+          <div class="form-group">
+            <label for="my-password">Password:</label>
+
+            <!-- Show Password Button -->
+            <div class="show-password-btn pull-right" data-field="#my-password">
+              <i class="fa fa-square-o" style="display: inline-block;"></i>
+              <i class="fa fa-check" style="display: none;"></i> Show Password
+            </div>
+            <!-- End Show Password Button -->
+
+            <input type="password" class="form-control" name="my-password" id="my-password" value="" maxlength="255" size="40" placeholder="Password" required>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
