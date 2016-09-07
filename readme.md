@@ -13,8 +13,13 @@ The included index file shows the implementation.  Please note that although I'm
 
 1. Include jQuery and FontAwesome in your page.
 
-2. Insert the following script after the jQuery inclusion:
+2. Insert the following script (**Section 1**) after the jQuery inclusion.
 
+3. Finally, add the following HTML (**Section 2**) to your form (see index file for details).
+
+4. **Please note that the data-field attribute must reference the ID of your password field**
+
+**Section 1**
 ```
 <script type="text/javascript">
   $(document).ready(function() {
@@ -28,9 +33,8 @@ The included index file shows the implementation.  Please note that although I'm
 </script>
 ```
 
-3. Finally, add the following HTML to your form (see index file for details).
-**Please note that the data-field attribute must reference the ID of your password field**
 
+**Section 2**
 ```
 <!-- Show Password Button -->
 <div class="show-password-btn pull-right" data-field="#my-password">
